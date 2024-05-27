@@ -1,0 +1,11 @@
+# Define the model
+model = Sequential([
+    Dense(64, activation='relu', input_shape=(X_train_scaled.shape[1],)),
+    Dense(128, activation='relu'),
+    Dense(y_train_encoded.shape[1], activation='softmax')
+])
+
+# Compile the model
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+model.summary(),
